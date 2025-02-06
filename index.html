@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haerul | Video Editor Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="script.js"></script>
+    <style>
+        html {
+            scroll-behavior: smooth ;
+        }
+        body {
+            background-color: #2D221F;
+            color: #F5E1DA;
+            font-family: 'Poppins', sans-serif;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <button id="theme-toggle" class="fixed top-4 right-4 p-2 bg-[#D1A385] text-[#2D221F] rounded">Toggle Mode</button>
+    <div class="min-h-screen flex flex-col items-center justify-center text-center p-6">
+        <h1 class="text-5xl font-extrabold text-[#D1A385] animate-pulse">Hey, I'm Haerul! 🎬</h1>
+        <p class="mt-4 text-lg max-w-2xl">A passionate video editor with 2 years of experience in Adobe Premiere, After Effects, and DaVinci Resolve.</p>
+        
+        <div class="mt-6 flex gap-4">
+            <a href="#projects" class="px-6 py-3 bg-[#D1A385] text-[#2D221F] rounded-xl shadow-lg hover:bg-[#C49476] transition">My Work</a>
+            <a href="#contact" class="px-6 py-3 border border-[#D1A385] rounded-xl shadow-lg hover:bg-[#D1A385] hover:text-[#2D221F] transition">Contact Me</a>
+        </div>
+    </div>
+
+    <section id="projects" class="py-20 text-center opacity-0 transition-opacity duration-1000">
+        <h2 class="text-4xl font-bold text-[#D1A385]">Featured Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 px-6">
+            <div class="bg-[#3B2C26] p-6 rounded-xl shadow-lg hover:scale-105 transition">
+                <h3 class="text-2xl font-semibold">Project 1</h3>
+                <p class="mt-2">A high-impact ad campaign edited for a major Indonesian brand.</p>
+            </div>
+            <div class="bg-[#3B2C26] p-6 rounded-xl shadow-lg hover:scale-105 transition">
+                <h3 class="text-2xl font-semibold">Project 2</h3>
+                <p class="mt-2">Engaging social media content that hit FYP on TikTok.</p>
+            </div>
+            <div class="bg-[#3B2C26] p-6 rounded-xl shadow-lg hover:scale-105 transition">
+                <h3 class="text-2xl font-semibold">Project 3</h3>
+                <p class="mt-2">YouTube content analysis for increased watch time and revenue.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 text-center">
+        <h2 class="text-4xl font-bold text-[#D1A385]">Let's Connect</h2>
+        <p class="mt-4">Looking for a video editor? Reach out to collaborate!</p>
+        <div class="mt-6 flex justify-center gap-6">
+            <a href="https://wa.me/085117055650" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp" class="w-12 h-12 hover:scale-110 transition">
+            </a>
+            <a href="#" onclick="alert('hairulakbar74@gmail.com'); return false;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png" alt="Gmail" class="w-12 h-12 hover:scale-110 transition">
+            </a>
+            <a href="https://www.linkedin.com/in/haerul-akbar-974ab0239/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1200px-LinkedIn_icon.svg.png" alt="LinkedIn" class="w-12 h-12 hover:scale-110 transition">
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-6 text-center bg-[#3B2C26] text-[#F5E1DA]">
+        <p>&copy; 2025 Haerul Akbar | Video Editor. All rights reserved.</p>
+        <p>Follow me on <a href="https://www.linkedin.com/in/haerul-akbar-974ab0239" class="text-[#D1A385] hover:underline">LinkedIn</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const themeToggle = document.getElementById("theme-toggle");
+            const body = document.body;
+            themeToggle.addEventListener("click", () => {
+                body.classList.toggle("dark-mode");
+                body.classList.toggle("light-mode");
+            });
+
+            const projectsSection = document.getElementById("projects");
+            window.addEventListener("scroll", () => {
+                if (window.scrollY + window.innerHeight > projectsSection.offsetTop) {
+                    projectsSection.classList.remove("opacity-0");
+                }
+            });
+
+            const modal = document.getElementById("modal");
+            const openModal = document.getElementById("open-modal");
+            const closeModal = document.getElementById("close-modal");
+            openModal.addEventListener("click", () => {
+                modal.classList.remove("hidden");
+            });
+            closeModal.addEventListener("click", () => {
+                modal.classList.add("hidden");
+            });
+        });
+    </script>
+</body>
+</html>
